@@ -1,20 +1,18 @@
 var Stack = function() {
-	var someInstance=this;
-     this._storage = {};
-     this._counter = 0 ;
-     return someInstance ;
+     this._storage =[];
 	
     
    this.add = function(value){
-    	this._storage[this._counter++]= value
+    this._storage.push(value);
       
     };
     this.remove = function() {
-    	this._counter && this._counter-- ;
-    	var result =this._storage[this._counter] ;
-    	delete this._storage[this._counter] ;
-    	return result;
-
+    this._storage.pop() ;
       
     };
   };
+
+
+  //another style:
+
+

@@ -9,7 +9,23 @@ var makeHashTable = function() {
       },
 
       insert: function(key, value) {
-        //your code is here
+        if(this._storage === undefined){
+          var arrR=[];
+          var arrkids=[];
+          arrkids[0]=key;
+          arrkids[1]=value;
+          arrR.push(arrkids);
+          this._storage[hashFn(key, max)]=arrR
+        }
+        else {
+           var arrkids=[];
+          arrkids[0]=key;
+          arrkids[1]=value;
+        this._storage[hashFn(key, max)].push(arrkids)
+        }
+
+        
+
         this._storage[hashFn(key, max)] = value;
     }
   }
